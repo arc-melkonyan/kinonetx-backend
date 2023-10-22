@@ -4,6 +4,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import multer from 'multer';
+import fs from 'fs';
 
 import { FilmController, AuthController } from './controllers/index.js';
 import { getUserId, verifyAccessToken, verifyRefreshToken } from './utils/jwt.js';
@@ -20,6 +21,9 @@ mongoose
 const app = express();
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
+    if (!fs.existsSync('uploads')) {
+      fs.mkdirSync('uploads');
+    }
     cb(null, 'uploads');
   },
   filename: function (req, file, cb) {
