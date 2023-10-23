@@ -23,6 +23,7 @@ export function verifyRefreshToken(req, res, next) {
         httpOnly: true,
         maxAge: 0,
         path: '/',
+        sameSite: 'none',
       }),
     );
     return res.sendStatus(401);
@@ -38,6 +39,7 @@ export function verifyRefreshToken(req, res, next) {
         httpOnly: true,
         maxAge: 0,
         path: '/',
+        sameSite: 'none',
       }),
     );
     return res.sendStatus(401);
