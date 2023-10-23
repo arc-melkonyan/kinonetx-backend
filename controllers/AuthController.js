@@ -21,6 +21,7 @@ export async function login(req, res) {
         maxAge: process.env.REFRESH_TOKEN_AGE,
         path: '/',
         sameSite: 'none',
+        secure: true,
       }),
     );
 
@@ -64,6 +65,7 @@ export async function register(req, res) {
         maxAge: process.env.REFRESH_TOKEN_AGE,
         path: '/',
         sameSite: 'none',
+        secure: true,
       }),
     );
     res.status(200).json({
@@ -85,6 +87,7 @@ export function logout(req, res) {
       maxAge: 0,
       path: '/',
       sameSite: 'none',
+      secure: true,
     }),
   );
   res.sendStatus(200);

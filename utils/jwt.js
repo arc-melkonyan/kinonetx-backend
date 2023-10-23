@@ -24,6 +24,7 @@ export function verifyRefreshToken(req, res, next) {
         maxAge: 0,
         path: '/',
         sameSite: 'none',
+        secure: true,
       }),
     );
     return res.sendStatus(401);
@@ -40,6 +41,7 @@ export function verifyRefreshToken(req, res, next) {
         maxAge: 0,
         path: '/',
         sameSite: 'none',
+        secure: true,
       }),
     );
     return res.sendStatus(401);
