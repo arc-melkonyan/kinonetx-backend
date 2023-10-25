@@ -22,6 +22,7 @@ export async function login(req, res) {
         path: '/',
         sameSite: 'none',
         secure: true,
+        domain: '.kinonetx.site',
       }),
     );
 
@@ -66,6 +67,7 @@ export async function register(req, res) {
         path: '/',
         sameSite: 'none',
         secure: true,
+        domain: '.kinonetx.site',
       }),
     );
     res.status(200).json({
@@ -88,6 +90,7 @@ export function logout(req, res) {
       path: '/',
       sameSite: 'none',
       secure: true,
+      domain: '.kinonetx.site',
     }),
   );
   res.sendStatus(200);

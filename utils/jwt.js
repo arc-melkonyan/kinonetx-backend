@@ -25,6 +25,7 @@ export function verifyRefreshToken(req, res, next) {
         path: '/',
         sameSite: 'none',
         secure: true,
+        domain: '.kinonetx.site',
       }),
     );
     return res.sendStatus(401);
@@ -42,6 +43,7 @@ export function verifyRefreshToken(req, res, next) {
         path: '/',
         sameSite: 'none',
         secure: true,
+        domain: '.kinonetx.site',
       }),
     );
     return res.sendStatus(401);
